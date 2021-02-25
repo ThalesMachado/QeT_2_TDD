@@ -1,4 +1,4 @@
-package main.java.com.QeT.App.Boleto;
+package com.QeT.App.Boleto;
 
 public class BoletoBO {
 

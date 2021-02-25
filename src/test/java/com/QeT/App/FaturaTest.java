@@ -1,4 +1,4 @@
-package test.java.com.QeT.App;
+package com.QeT.App;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -7,9 +7,9 @@ import java.util.List;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import main.java.com.QeT.App.Boleto.Boleto;
-import main.java.com.QeT.App.Fatura.Fatura;
-import main.java.com.QeT.App.Fatura.FaturaBO;
+import com.QeT.App.Boleto.Boleto;
+import com.QeT.App.Fatura.Fatura;
+import com.QeT.App.Fatura.FaturaBO;
 
 public class FaturaTest {
     @Test

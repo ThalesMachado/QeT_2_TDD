@@ -1,4 +1,4 @@
-package test.java.com.QeT.App;
+package com.QeT.App;
 
 public class AppTest {
 

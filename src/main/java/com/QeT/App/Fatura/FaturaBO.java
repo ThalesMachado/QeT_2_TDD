@@ -1,4 +1,4 @@
-package main.java.com.QeT.App.Fatura;
+package com.QeT.App.Fatura;
 
 public class FaturaBO {
 
