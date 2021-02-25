@@ -24,9 +24,7 @@ public class PagamentoTest {
         boletos.add(new Boleto("d", new Date(), 200.0));
         Pagamento pagamento = PagamentoBO.getInstance().gerarPagamentoBoletos(boletos);
         Double somatorioValorBoletos = BoletoBO.getInstance().somatorioBoletos(boletos);
-        Date hoje = new Date();
         assertEquals(pagamento.getTipo(), TipoPagamento.BOLETO);
         assertEquals(pagamento.getValorPago(), somatorioValorBoletos);
-        assertEquals(pagamento.getData(), hoje);
     }
 }
