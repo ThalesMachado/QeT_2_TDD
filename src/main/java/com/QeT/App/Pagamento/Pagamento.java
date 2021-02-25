@@ -9,6 +9,18 @@ public class Pagamento {
 
     public Pagamento(){}
 
+    public Date getData() {
+        return data;
+    }
+
+    public TipoPagamento getTipo() {
+        return tipo;
+    }
+
+    public Double getValorPago() {
+        return valorPago;
+    }
+
     protected void setData(Date data) {
         this.data = data;
     }
