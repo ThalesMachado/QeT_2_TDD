@@ -47,4 +47,8 @@ public class Fatura {
         this.valorTotal = valorTotal;
     }
 
+    protected void setStatus(StatusPagamento status) {
+        this.status = status;
+    }
+
 }

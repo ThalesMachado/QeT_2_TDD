@@ -1,5 +1,6 @@
 package com.QeT.App;
 
+import static org.junit.jupiter.api.Assertions.assertAll;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.util.ArrayList;
@@ -23,11 +24,10 @@ public class PagamentoTest {
         boletos.add(new Boleto("b", new Date(), 150.0));
         boletos.add(new Boleto("c", new Date(), 175.0));
         boletos.add(new Boleto("d", new Date(), 200.0));
-        Fatura fatura = new Fatura("João Sem Graça", 2500, new Date());
-        Pagamento pagamento = PagamentoBO.getInstance().gerarPagamentoBoletos(boletos);
-        Double somatorioValorBoletos = BoletoBO.getInstance().somatorioBoletos(boletos);
-        assertEquals(pagamento.getTipo(), TipoPagamento.BOLETO);
-        assertEquals(pagamento.getValorPago(), somatorioValorBoletos);
-        assertEquals(fatura, pagamento.getFatura());
+
+        List<Pagamento> pagamentos = PagamentoBO.getInstance().gerarPagamentoBoletos(boletos);
+        Double somatorio = PagamentoBO.getInstance().somatorioPagamentos(pagamentos);
+        assertEquals(pagamentos.size(), 4);
+        assertEquals(525.0, somatorio);
     }
 }

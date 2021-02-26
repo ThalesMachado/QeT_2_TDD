@@ -6,7 +6,6 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import com.QeT.App.Boleto.Boleto;
@@ -22,8 +21,8 @@ public class FaturaTest {
         List<Boleto> boletos = new ArrayList<Boleto>();
         boletos.add(new Boleto("a", new Date(), 100.0));
         Fatura fatura = new Fatura("João Semgraça", 100.0, new Date());
-        Pagamento pagamento = PagamentoBO.gerarPagamentoBoletos(boletos);
-        FaturaBO.pagarFatura(fatura, pagamento);
+        Pagamento pagamento = PagamentoBO.getInstance().gerarPagamentoBoletos(boletos);
+        FaturaBO.getInstance().pagarFatura(fatura, pagamento);
         assertEquals(StatusPagamento.PAGA, fatura.getStatus());
     }
 }

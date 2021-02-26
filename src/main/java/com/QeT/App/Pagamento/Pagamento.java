@@ -7,7 +7,8 @@ public class Pagamento {
     protected Date data;
     protected TipoPagamento tipo;
 
-    public Pagamento(){}
+    public Pagamento() {
+    }
 
     public Date getData() {
         return data;
