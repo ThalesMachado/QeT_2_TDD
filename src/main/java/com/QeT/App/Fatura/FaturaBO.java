@@ -1,6 +1,9 @@
 package com.QeT.App.Fatura;
 
+import java.util.List;
+
 import com.QeT.App.Pagamento.Pagamento;
+import com.QeT.App.Pagamento.PagamentoBO;
 import com.QeT.App.Pagamento.StatusPagamento;
 
 public class FaturaBO extends Fatura {
@@ -10,8 +13,9 @@ public class FaturaBO extends Fatura {
         return instance;
     }
 
-    public void pagarFatura(Fatura fatura, Pagamento pagamento) {
-        if (pagamento.getValorPago() >= fatura.getValorTotal()) {
+    public void pagarFatura(Fatura fatura, List<Pagamento> pagamentos) {
+        Double somatorio = PagamentoBO.getInstance().somatorioPagamentos(pagamentos);
+        if (somatorio >= fatura.getValorTotal()) {
             fatura.setStatus(StatusPagamento.PAGA);
         } else {
             fatura.setStatus(StatusPagamento.PENDENTE);

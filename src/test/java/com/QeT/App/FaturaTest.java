@@ -18,11 +18,11 @@ import com.QeT.App.Pagamento.StatusPagamento;
 public class FaturaTest {
     @Test
     public void testaPagamentoFatura() {
-        List<Boleto> boletos = new ArrayList<Boleto>();
-        boletos.add(new Boleto("a", new Date(), 100.0));
+        Boleto boleto = new Boleto("a", new Date(), 100.0);
         Fatura fatura = new Fatura("João Semgraça", 100.0, new Date());
-        Pagamento pagamento = PagamentoBO.getInstance().gerarPagamentoBoletos(boletos);
-        FaturaBO.getInstance().pagarFatura(fatura, pagamento);
+        List<Pagamento> pagamentos = new ArrayList<Pagamento>();
+        pagamentos.add(PagamentoBO.getInstance().gerarPagamentoBoleto(boleto));
+        FaturaBO.getInstance().pagarFatura(fatura, pagamentos);
         assertEquals(StatusPagamento.PAGA, fatura.getStatus());
     }
 }
