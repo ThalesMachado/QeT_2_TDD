@@ -1,5 +1,5 @@
 package com.QeT.App.Fatura;
 
-public class FaturaBO {
+public class FaturaBO extends Fatura {
 
 }

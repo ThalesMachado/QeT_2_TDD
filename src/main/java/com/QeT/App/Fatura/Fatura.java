@@ -2,10 +2,13 @@ package com.QeT.App.Fatura;
 
 import java.util.Date;
 
+import com.QeT.App.Pagamento.StatusPagamento;
+
 public class Fatura {
     private Date data;
     private Double valorTotal;
     private String nomeCliente;
+    protected StatusPagamento status;
 
     public Fatura(String nomeCliente, Double valorTotal, Date data) {
         this.data = data;
@@ -26,6 +29,10 @@ public class Fatura {
 
     public Double getValorTotal() {
         return valorTotal;
+    }
+
+    public StatusPagamento getStatus() {
+        return status;
     }
 
     public void setData(Date data) {
