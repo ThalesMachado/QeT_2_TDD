@@ -2,10 +2,13 @@ package com.QeT.App.Pagamento;
 
 import java.util.Date;
 
+import com.QeT.App.Boleto.Boleto;
+
 public class Pagamento {
-    protected Double valorPago;
-    protected Date data;
-    protected TipoPagamento tipo;
+    private Double valorPago;
+    private Date data;
+    private Boleto boleto;
+    private TipoPagamento tipo;
 
     public Pagamento() {
     }
@@ -22,6 +25,10 @@ public class Pagamento {
         return valorPago;
     }
 
+    public Boleto getBoleto() {
+        return boleto;
+    }
+
     protected void setData(Date data) {
         this.data = data;
     }
@@ -32,5 +39,9 @@ public class Pagamento {
 
     protected void setValorPago(Double valorPago) {
         this.valorPago = valorPago;
+    }
+
+    protected void setBoleto(Boleto boleto) {
+        this.boleto = boleto;
     }
 }
