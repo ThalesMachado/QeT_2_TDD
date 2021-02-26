@@ -15,7 +15,7 @@ public class FaturaTest {
     @Test
     public void testaPagamentoFatura() {
         List<Boleto> boletos = new ArrayList<Boleto>();
-        boletos.add(new Boleto(100, new Date(), "12345"));
+        boletos.add(new Boleto("a", new Date(), 100.0));
         Fatura fatura = new Fatura("João Semgraça", 100.0, new Date());
         Boolean faturaEstaPaga = FaturaBO.faturaEstaPaga(fatura, boletos);
         Assertions.assertEquals(true, faturaEstaPaga);

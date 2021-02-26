@@ -8,6 +8,7 @@ import java.util.List;
 
 import com.QeT.App.Boleto.Boleto;
 import com.QeT.App.Boleto.BoletoBO;
+import com.QeT.App.Fatura.Fatura;
 import com.QeT.App.Pagamento.Pagamento;
 import com.QeT.App.Pagamento.PagamentoBO;
 import com.QeT.App.Pagamento.TipoPagamento;
@@ -22,9 +23,11 @@ public class PagamentoTest {
         boletos.add(new Boleto("b", new Date(), 150.0));
         boletos.add(new Boleto("c", new Date(), 175.0));
         boletos.add(new Boleto("d", new Date(), 200.0));
-        Pagamento pagamento = PagamentoBO.getInstance().gerarPagamentoBoletos(boletos);
+        Fatura fatura = new Fatura("João Sem Graça", 2500, new Date());
+        Pagamento pagamento = PagamentoBO.getInstance().gerarPagamentoBoletos(fatura, boletos);
         Double somatorioValorBoletos = BoletoBO.getInstance().somatorioBoletos(boletos);
         assertEquals(pagamento.getTipo(), TipoPagamento.BOLETO);
         assertEquals(pagamento.getValorPago(), somatorioValorBoletos);
+        assertEquals(fatura, pagamento.getFatura());
     }
 }
